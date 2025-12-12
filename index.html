@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آموزش تعاملی پایتون</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable dark mode using a class
+        theme: {
+          extend: {
+            colors: {
+              'purple': {
+                300: '#c4b5fd',
+                400: '#a78bfa',
+                500: '#8b5cf6',
+                600: '#7c3aed',
+              },
+              'indigo': {
+                500: '#6366f1',
+                600: '#4f46e5',
+              },
+              'dark': {
+                  'bg': '#0D1117',
+                  'surface': '#161B22',
+              },
+              'orange': { // Added orange colors
+                400: '#fb923c', 
+                500: '#f97316',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              persian: ['Vazirmatn', 'sans-serif'],
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            animation: {
+              'fade-in': 'fade-in 0.3s ease-out forwards',
+            },
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+<script>
+  // برای استقرار در محیط‌های خارج از Google AI Studio (مانند cPanel) که 'window.aistudio' در دسترس نیست،
+  // می‌توانید کلید API خود را به صورت زیر در این فایل `index.html` تنظیم کنید:
+window.GEMINI_API_KEY = "AIzaSyC1hGOatPET5fLyYA5dX5qCbmWFs0vbfpE";
+  // مطمئن شوید که "YOUR_GEMINI_API_KEY_HERE" را با کلید واقعی خود جایگزین کرده‌اید.
+</script>
+<script>
+  // Register the Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('Service Worker registered! Scope:', registration.scope);
+        })
+        .catch(err => {
+          console.log('Service Worker registration failed:', err);
+        });
+    });
+  }
+</script>
+</head>
+  <body class="font-persian bg-slate-100 text-slate-900 dark:bg-dark-bg dark:text-slate-300 transition-colors duration-300">
+    <div id="root"></div>
+  </body>
+</html>

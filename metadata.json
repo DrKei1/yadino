@@ -1,0 +1,5 @@
+{
+  "name": "Interactive Python Tutor with AI",
+  "description": "An interactive web application for learning Python, featuring a live code editor, step-by-step lessons, and an AI assistant powered by Gemini to explain code, debug errors, and provide hints. The application is bilingual, supporting both English and Persian.",
+  "requestFramePermissions": []
+}
